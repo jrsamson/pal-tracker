@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
+//import static java.lang.System.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class JdbcTimeEntryRepositoryTest {
@@ -24,6 +25,7 @@ public class JdbcTimeEntryRepositoryTest {
     @Before
     public void setUp() throws Exception {
         MysqlDataSource dataSource = new MysqlDataSource();
+        System.out.println(System.getenv("SPRING_DATASOURCE_URL"));
         dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
 
         subject = new JdbcTimeEntryRepository(dataSource);
